@@ -25,5 +25,5 @@ The wrapper supports all the props expected by Formsy components and react-combo
 onChange works the react-combo-select way: new value as parameter rather than the event object.
 
 For all other props, refer to Formsy and react-combo-select documentation:
-[https://github.com/markokostovski/react-combo-select]
-[https://github.com/christianalfoni/formsy-react]
+[https://github.com/markokostovski/react-combo-select](https://github.com/markokostovski/react-combo-select)
+[https://github.com/christianalfoni/formsy-react](https://github.com/christianalfoni/formsy-react)
