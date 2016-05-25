@@ -7,7 +7,8 @@ export default React.createClass({
 
 	//change handler to copy the wrapped component's value into Formsy wrapper's state
 	changeValue(value) {
-		this.props.onChange(value); //we have to call user-supplied change handler first
+		if (typeof this.props.onChange == 'function')
+			this.props.onChange(value); //we have to call user-supplied change handler first
 		this.setValue(value);
 	},
 
