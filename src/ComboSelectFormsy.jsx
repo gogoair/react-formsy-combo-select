@@ -15,7 +15,6 @@ export default React.createClass({
 	shouldComponentUpdate(nextProps, nextState) {
 		for (var prop in nextProps)
 			if (nextProps[prop] != this.props[prop]) {
-				console.log(prop, nextProps[prop], this.props[prop], 'rerendering');
 				return true;
 			}
 

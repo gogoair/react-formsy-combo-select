@@ -1,6 +1,6 @@
 {
   "name": "react-formsy-combo-select",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "keywords": "react, select, singleselect, multiselect, search, react-component, formsy, formsy-component",
   "description": "A simple Formsy wrapper around react-combo-select.",
   "main": "./dist/ComboSelect.jsx",
@@ -9,8 +9,16 @@
     "prepublish": "mkdir dist && ./node_modules/.bin/babel src/ComboSelectFormsy.jsx --out-file dist/ComboSelect.jsx",
     "postpublish": "rm -rf ./dist"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MilosRasic/react-formsy-combo-select.git"
+  },
   "author": "Miloš Rašić <milos.rasic@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MilosRasic/react-formsy-combo-select/issues"
+  },
+  "homepage": "https://github.com/MilosRasic/react-formsy-combo-select#readme",
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-cli": "^6.6.5",

@@ -30,4 +30,4 @@ For all other props, refer to Formsy and react-combo-select documentation:
 
 [https://github.com/markokostovski/react-combo-select](https://github.com/markokostovski/react-combo-select)
 
-[https://github.com/christianalfoni/formsy-react](https://github.com/christianalfoni/formsy-reactgit s)
+[https://github.com/christianalfoni/formsy-react](https://github.com/christianalfoni/formsy-react)
