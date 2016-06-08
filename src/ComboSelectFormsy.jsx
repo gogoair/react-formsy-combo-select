@@ -19,12 +19,14 @@ export default React.createClass({
 				return true;
 			}
 
-		if (nextState._validationError.length != this.state._validationError)
-			return true;
-
-		for (let i = 0, len = nextState._validationError.length; i < len; i++)
-			if (nextState._validationError[i] != this.state._validationError[i])
+		if (nextState._validationError && this.state._validationError) {
+			if (nextState._validationError.length != this.state._validationError.length)
 				return true;
+
+			for (let i = 0, len = nextState._validationError.length; i < len; i++)
+				if (nextState._validationError[i] != this.state._validationError[i])
+					return true;
+		}
 
 		return false;
 	},

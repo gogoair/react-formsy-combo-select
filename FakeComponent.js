@@ -59,7 +59,7 @@ export default class FakeComponent extends Component {
                     <div style={{position: 'relative'}}>
                     {this.value1}
                         {<ComboSelectFormsy  type="select" data={standardArray} name="test1f"
-                                      icon="fa fa-chevron-circle-down" search="smart" ref="formsySelect1" validations="isEmail" validationError="validation error"
+                                      icon="fa fa-chevron-circle-down" search="smart" ref="formsySelect1"
                                       disabled={false} onChange={this.fakeFunction1.bind(this)} map={{text: 'text', value: true}} onToggle={this.fakeToggle}/>}
                         {<ComboSelectFormsy text="text2" type="multiselect" data={standardArray} name="test2f" validations="isNumeric"
                                       icon="fa fa-chevron-circle-down" search="smart" ref="formsySelect2" validationError="validation error"
