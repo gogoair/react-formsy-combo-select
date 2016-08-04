@@ -44,7 +44,6 @@ export default class FakeComponent extends Component {
 
     render() {
         var standardArray = ["737-800", "767-300", "777-200", "777-300", "ERJ 170-100"];
-        console.log(this.value1);
 
         return (
             <div>
@@ -59,10 +58,10 @@ export default class FakeComponent extends Component {
                     <div style={{position: 'relative'}}>
                     {this.value1}
                         {<ComboSelectFormsy  type="select" data={standardArray} name="test1f"
-                                      icon="fa fa-chevron-circle-down" search="smart" ref="formsySelect1"
+                                      icon="fa fa-chevron-circle-down" search="smart" ref="formsySelect1" required
                                       disabled={false} onChange={this.fakeFunction1.bind(this)} map={{text: 'text', value: true}} onToggle={this.fakeToggle}/>}
                         {<ComboSelectFormsy text="text2" type="multiselect" data={standardArray} name="test2f" validations="isNumeric"
-                                      icon="fa fa-chevron-circle-down" search="smart" ref="formsySelect2" validationError="validation error"
+                                      icon="fa fa-chevron-circle-down" search="smart" ref="formsySelect2" validationError="validation error" required
                                       disabled={false} onChange={this.fakeFunction2.bind(this)} map={{text: 'win', value: true}}/>}
                     </div>
                     <br/>
