@@ -1,12 +1,12 @@
 {
   "name": "react-formsy-combo-select",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "keywords": "react, select, singleselect, multiselect, search, react-component, formsy, formsy-component",
   "description": "A simple Formsy wrapper around react-combo-select.",
   "main": "./dist/ComboSelect.jsx",
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --config webpack.config.js  --hot --progress --colors --port 8081",
-    "prepublish": "mkdir dist && ./node_modules/.bin/babel src/ComboSelectFormsy.jsx --out-file dist/ComboSelect.jsx",
+    "prepublish": "mkdir dist && ./node_modules/.bin/babel src/ComboSelectFormsy.jsx --out-file dist/ComboSelect.jsx && ./node_modules/.bin/babel src/prop-utilities.js --out-file dist/prop-utilities.js",
     "postpublish": "rm -rf ./dist"
   },
   "repository": {
