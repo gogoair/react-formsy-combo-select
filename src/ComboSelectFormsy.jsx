@@ -13,26 +13,6 @@ export default React.createClass({
         this.setValue(value);
     },
 
-    //we trust the copmonent to maintain its own state for everything except validation errors, which
-    // react-combo-select doesn't handle on it's own
-    shouldComponentUpdate(nextProps, nextState) {
-        for (var prop in nextProps)
-            if (nextProps[prop] != this.props[prop]) {
-                return true;
-            }
-
-        if (nextState._validationError && this.state._validationError) {
-            if (nextState._validationError.length != this.state._validationError.length)
-                return true;
-
-            for (let i = 0, len = nextState._validationError.length; i < len; i++)
-                if (nextState._validationError[i] != this.state._validationError[i])
-                    return true;
-        }
-
-        return false;
-    },
-
     render() {
         const {onChange, ...other} = this.props;	//we want to pass on all the props except onChange
 
