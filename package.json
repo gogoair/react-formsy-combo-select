@@ -1,6 +1,6 @@
 {
   "name": "react-formsy-combo-select",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "keywords": "react, select, singleselect, multiselect, search, react-component, formsy, formsy-component",
   "description": "A simple Formsy wrapper around react-combo-select.",
   "main": "./dist/ComboSelect.jsx",
