@@ -1,32 +1,38 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ComboSelect from 'react-combo-select';
-import Formsy from 'formsy-react';
-import {cleanProps} from './prop-utilities';
+import { withFormsy } from 'formsy-react';
 
-export default React.createClass({
-    mixins: [Formsy.Mixin],
+import { cleanProps } from './prop-utilities';
+
+class ReactFormsyComboSelect extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.changeValue = this.changeValue.bind(this);
+    }
 
     //change handler to copy the wrapped component's value into Formsy wrapper's state
     changeValue(value) {
-        if (typeof this.props.onChange == 'function')
+        if (typeof this.props.onChange == 'function') {
             this.props.onChange(value); //we have to call user-supplied change handler first
-        this.setValue(value);
-    },
+        }
+
+        this.props.setValue(value);
+    }
 
     render() {
-        const {onChange, ...other} = this.props;	//we want to pass on all the props except onChange
-
-        const className = this.showRequired() ? 'required' : this.showError() ? 'error' : null;
+        const { onChange, getValue, setValue, getErrorMessage, showRequired, showError,  ...other } = this.props; //we want to pass on all the props except onChange
 
         return (
-            <div className={className}>
-                <ComboSelect className={className}
-                             onChange={this.changeValue}
-                             {...cleanProps(other)}
-                             value={this.getValue()}
+            <div>
+                <ComboSelect
+                    onChange={this.changeValue}
+                    {...cleanProps(other)}
                 />
-                <span>{this.getErrorMessage()}</span>
+                <span>{getErrorMessage()}</span>
             </div>
         );
     }
-});
+}
+
+export default withFormsy(ReactFormsyComboSelect);

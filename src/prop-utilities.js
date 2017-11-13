@@ -35,6 +35,19 @@ export function cleanProps(props) {
               rowLabel,
               validatePristine,
 
+              getErrorMessages,
+              hasValue,
+              isFormDisabled,
+              isValid,
+              isPristine,
+              isFormSubmitted,
+              isRequired,
+              isValidValue,
+              resetValue,
+              setValidations,
+              innerRef,
+              
+
               ...rest
           } = props;
 
