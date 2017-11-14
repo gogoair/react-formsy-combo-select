@@ -2,10 +2,11 @@ test
 src
 node_modules
 index.html
-index.jsx
-FakeComponent.js
+Demo.jsx
+demo.js
 .babelrc
 .eslintrc
 .gitignore
 .git
 webpack.config.js
+.directory
