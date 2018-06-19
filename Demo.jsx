@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ComboSelectFormsy from './src/ComboSelectFormsy.jsx';
-import ComboSelect from 'react-combo-select';
 import Formsy from 'formsy-react';
 
 export default class Demo extends Component {
@@ -14,18 +13,19 @@ export default class Demo extends Component {
 				{
 					text: 111,
 					win: {
-						here: 'win',
+						here: 'win'
 					},
-					value: 111,
+					value: 111
 				},
 				{
 					text: 3,
 					win: {
-						here: 'win-win',
+						here: 'win-win'
 					},
-					value: 3,
-				},
+					value: 3
+				}
 			],
+			selectedGroupVals: ['AAL', 'GNR', 'T-Mobile', 'Startek']
 		};
 	}
 
@@ -60,8 +60,80 @@ export default class Demo extends Component {
 							{ text: 'air-JA007D5', win: 'win-111', value: 'JA007D5' },
 							{ text: 'air-JA008D5', win: 'win-222', value: 'JA008D5' },
 							{ text: 'air-JA009D5', win: 'win-333', value: 'JA009D5' },
-							{ text: 'air-JA107D5', win: 'win-444', value: 'JA010D5' },
+							{ text: 'air-JA107D5', win: 'win-444', value: 'JA010D5' }
 						],
+						groups: [
+							{
+								groupName: 'Airlines',
+								options: [
+									{
+										text: 'AAL',
+										win: 'AAL',
+										value: 'AAL',
+										number: 1
+									},
+									{
+										text: 'ACA',
+										win: 'ACA',
+										value: 'ACA',
+										number: 1
+									},
+									{
+										text: 'GNR',
+										win: 'GNR',
+										value: 'GNR',
+										number: 1
+									},
+									{
+										text: 'ZZT',
+										win: 'ZZT',
+										value: 'ZZT',
+										number: 1
+									},
+									{
+										text: 'JAL',
+										win: 'JAL',
+										value: 'JAL',
+										number: 1
+									},
+									{
+										text: 'WOR',
+										win: 'WOR',
+										value: 'WOR',
+										number: 1
+									}
+								]
+							},
+							{
+								groupName: 'Other',
+								options: [
+									{
+										text: 'T-Mobile',
+										win: 'T-Mobile',
+										value: 'T-Mobile',
+										number: 1
+									},
+									{
+										text: 'Startek',
+										win: 'Startek',
+										value: 'Startek',
+										number: 1
+									},
+									{
+										text: 'Airtech',
+										win: 'Airtech',
+										value: 'Airtech',
+										number: 1
+									},
+									{
+										text: 'SkyPartner',
+										win: 'SkyPartner',
+										value: 'SkyPartner',
+										number: 1
+									}
+								]
+							}
+						]
 					},
 					function() {
 						setTimeout(
@@ -86,8 +158,8 @@ export default class Demo extends Component {
 		this.value1 = value;
 	}
 
-	fakeFunction2(value) {
-		//console.log('change: '+value);
+	fakeFunction2(value, b) {
+		console.log('change: ' + value);
 		this.value2 = value;
 	}
 
@@ -111,10 +183,10 @@ export default class Demo extends Component {
 				<Formsy
 					onValidSubmit={this.testSubmit}
 					onValid={() => {
-						console.log('valid');
+						// console.log('valid');
 					}}
 					onInvalid={() => {
-						console.log('invalid');
+						// console.log('invalid');
 					}}
 				>
 					<br />
@@ -142,6 +214,7 @@ export default class Demo extends Component {
 								onToggle={this.fakeToggle}
 							/>
 						}
+
 						{
 							<ComboSelectFormsy
 								text="text2"
@@ -157,6 +230,25 @@ export default class Demo extends Component {
 								disabled={false}
 								onChange={this.fakeFunction2.bind(this)}
 								map={{ text: 'win', value: true }}
+							/>
+						}
+
+						{
+							<ComboSelectFormsy
+								text="Select Partner"
+								type="multiselect"
+								groups="enabled"
+								data={this.state.groups}
+								value={this.state.selectedGroupVals}
+								name="test2g"
+								search="smart"
+								scrollHeight={270}
+								preferredDirection="down"
+								validations="isExisty"
+								icon="fa fa-chevron-down"
+								iconSelectInactive="fa fa-circle-thin"
+								iconSelectActive="fa fa-check"
+								onChange={this.fakeFunction2.bind(this)}
 							/>
 						}
 					</div>
